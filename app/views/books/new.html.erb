@@ -7,4 +7,11 @@
   <%= f.text_area :body %>
 	
   <%= f.submit 'Create Book' %>
+
+  # 以下は画像を追加分
+  <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
 <% end %>
