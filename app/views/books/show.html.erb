@@ -1,4 +1,7 @@
 <div>
+  <%= flash[:notice] %>
+</div>
+
   <%= image_tag @book.get_image %>
   <% if @user.id == current_user.id %>
     <p><%= link_to "Book編集", edit_book_path(@book) %></p>
@@ -10,4 +13,3 @@
   <% if @book.user == current_user %>
     <%= link_to "削除", book_path(@book), method: :delete %>
   <% end %>
-</div>
