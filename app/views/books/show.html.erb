@@ -1,5 +1,8 @@
 <div>
   <%= image_tag @book.get_image %>
+  <% if @user.id == current_user.id %>
+    <p><%= link_to "Book編集", edit_book_path(@book) %></p>
+  <% end %>
   <p>タイトル：<%= @book.title %></p>
   <p>opinion：<%= @book.body %></p>
   <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p>
@@ -7,5 +10,4 @@
   <% if @book.user == current_user %>
     <%= link_to "削除", book_path(@book), method: :delete %>
   <% end %>
-<p><%= link_to "Book編集", edit_user_path(@user) %></p>
 </div>
