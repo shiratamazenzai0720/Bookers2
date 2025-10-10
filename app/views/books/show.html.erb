@@ -1,9 +1,10 @@
 <div>
+  <%= image_tag @book.get_image %>
   <p>タイトル：<%= @book.title %></p>
   <p>opinion：<%= @book.body %></p>
-  <p>投稿ユーザー画像</p>
+  <p>投稿ユーザー画像：<%= image_tag 'sample-author1.jpg' %></p>
   <p>ユーザーネーム：<%= @book.user.name %></p>
-  <% if @post_image.user == current_user %>
-    <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+  <% if @book.user == current_user %>
+    <%= link_to "削除", book_path(@book), method: :delete %>
   <% end %>
 </div>
