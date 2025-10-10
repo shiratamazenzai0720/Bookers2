@@ -3,4 +3,7 @@
   <p>opinion：<%= @book.body %></p>
   <p>投稿ユーザー画像</p>
   <p>ユーザーネーム：<%= @book.user.name %></p>
+  <% if @post_image.user == current_user %>
+    <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+  <% end %>
 </div>
