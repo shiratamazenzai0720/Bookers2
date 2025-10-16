@@ -15,3 +15,7 @@
   <%= f.text_field :body, autofocus: true, id:"inputBody", placeholder:"意見"%>
   <%= f.submit "変更を保存" %>
 <% end %>
+
+<%= link_to "Show", book_path(@book) %>
+  |
+<%= link_to "Back", books_path %>
